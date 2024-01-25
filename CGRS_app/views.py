@@ -7,16 +7,22 @@ def index(request):
 
 def user_login(request):
     if request.method == 'POST':
-        register = request.POST['register']
-        password = request.POST['password']
+        register = request.POST.get('register')
+        password = request.POST.get('password')
+
+        print(f"Attempting login with username: {register}")
+
         user = authenticate(username=register, password=password)
         if user is not None:
             login(request, user)
-            return redirect('admin-dashboard')
+            print("Login successful!")
+            return redirect('dashboard')
         else:
-            # Handle authentication failure
+            print("Login failed. Invalid credentials.")
+            # Handle authentication failure, e.g., show an error message
             pass
-    return render(request,'login.html')
+
+    return render(request, 'login.html')  # Make sure to render the login page for GET requests
 
 def admin(request):
     return render(request,'admin.html')
