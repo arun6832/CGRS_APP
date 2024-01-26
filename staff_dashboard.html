@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="staff_style.css">
+    <title>Complaint Dashboard</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Complaint Dashboard</div>
+        <div class="nav-buttons">
+            <button id="checkStatusBtn" onclick="checkComplaintStatus()">Check Status</button>
+            <button id="profileBtn" onclick="redirectToProfile()">Profile</button>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <form id="complaintForm">
+            <label for="department">Select Department:</label>
+            <select id="department" name="department">
+                <option value="it">IT Department</option>
+                <option value="hr">HR Department</option>
+                <option value="finance">Finance Department</option>
+                <!-- Add more departments as needed -->
+            </select>
+
+            <label for="complaint">Your Complaint:</label>
+            <textarea id="complaint" name="complaint" rows="4" placeholder="Type your complaint here..."></textarea>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+
+        <div class="complaintStatus">
+            <h2>Check Complaint Status</h2>
+            <label for="statusId">Enter Complaint ID:</label>
+            <input type="text" id="statusId" name="statusId" placeholder="Enter your complaint ID">
+            <button id="checkStatusBtn" onclick="checkComplaintStatus()">Check Status</button>
+            <p id="statusResult"></p>
+        </div>
+    </div>
+
+    <script src="staff_js.js"></script>
+</body>
+</html>
