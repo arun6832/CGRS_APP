@@ -29,3 +29,6 @@ def admin(request):
 
 def dashboard(request):
     return render(request,'dashboard.html')
+
+def admin_profile(request):
+    return render(request,'admin_profile.html')
