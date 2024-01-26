@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hod_style.css">
+    <title>HOD Dashboard</title>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="college-logo"> 
+            <img src="college_logo.png" alt="College Logo"> <!-- Add your college logo source and alt text here -->
+        </div>
+        <div class="news-ticker">
+            <marquee behavior="scroll" direction="left">
+                <!-- Add your news or updates here -->
+                News: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </marquee>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="logo">HOD Dashboard</div>
+        <div class="nav-buttons">
+            <button id="checkStatusBtn" onclick="checkStatus()">Check Status</button>
+            <button id="profileBtn" onclick="redirectToProfile()">Profile</button>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="complaintList">
+            <h2>View Complaints</h2>
+            <ul id="complaintList"></ul>
+        </div>
+    </div>
+
+    <script src="hod_script.js"></script>
+</body>
+
+</html>
