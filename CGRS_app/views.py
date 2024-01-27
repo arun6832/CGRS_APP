@@ -24,11 +24,17 @@ def user_login(request):
 
     return render(request, 'login.html')  # Make sure to render the login page for GET requests
 
-def admin(request):
-    return render(request,'admin.html')
+def HOD(request):
+    return render(request,'HOD.html')
+
+def HODprofile(request):
+    return render(request,'HODprofile.html')
+
+def HODtable(request):
+    return render(request,'HODtable.html')
 
 def dashboard(request):
     return render(request,'dashboard.html')
 
-def admin_profile(request):
-    return render(request,'admin_profile.html')
+def HODnot(request):
+    return render(request,'HODnot.html')
