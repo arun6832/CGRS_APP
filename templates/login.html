@@ -16,6 +16,7 @@
 
 <body>
     <div id="container" class="container">
+        
         <!-- FORM SECTION -->
         <div class="row">
             <!-- SIGN UP -->
@@ -24,21 +25,21 @@
                     <div class="form sign-up">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="Register Number">
+                            <input type="text" placeholder="Register Number" name="Register_No">
                         </div>
                         <div class="input-group">
                             <i class='bx bx-mail-send'></i>
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="Email" name="email">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="Password" name="password>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Confirm password">
+                            <input type="password" placeholder="Confirm password" name="confirm_password">
                         </div>
-                        <button>
+                        <button type="submit">
                             Sign up
                         </button>
                         <p>
@@ -68,19 +69,20 @@
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
+                {% csrf_token %}
                 <div class="form-wrapper align-items-center">
                     <div class="form sign-in">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="Register Number">
+                            <input type="text" placeholder="Register Number" name="Register_No">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="Password" name="password">
                         </div>
-                        <button ><a href="{% url 'dashboard' %}" style="color: aliceblue;">
+                        <button type="submit" style="color: aliceblue;">
                             Sign in
-                        </button></a>
+                        </button>
                         <p>
                             <b>
                                 Forgot password?

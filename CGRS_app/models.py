@@ -1,13 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class provider(models.Model):
-    pid=models.IntegerField(primary_key=True)
-    pname = models.CharField(max_length=30)
-    pcontactno = models.CharField(max_length=12)
-    pemail=models.CharField(max_length=40)
-    sid=models.ForeignKey(on_delete=models.CASCADE)
-    pstatus=models.BooleanField()
-    
-    def _str_(self):
-        return str(self.pname._str_())
-# Create your models here.
+class user_details(models.Model):
+    Register_No=models.ForeignKey(User,on_delete=models.CASCADE,default=0)
+    email=models.CharField(max_length=100,null=False)
+    password=models.CharField(max_length=100,null=False)
+    confirm_password=models.CharField(max_length=100,null=True)
+
+class Meta:
+        app_label = 'CGRS_app'
