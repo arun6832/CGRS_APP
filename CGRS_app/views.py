@@ -43,9 +43,11 @@ def HODnot(request):
 
 def user_login(request):
     if request.method == "POST":
-        Register_No = request.POST.get('Register No')
+        Register_No = request.POST.get('Register_No')
         password = request.POST.get('password')
-        user = authenticate(request,Register_No=Register_No,password=password)
+        print(Register_No,password)
+        user = authenticate(request,username=Register_No,password=password)
+        print(user)
         if user is not None and user.is_active:
             if user.is_superuser==False and user.is_staff==True:
                 login(request,user)

@@ -10,17 +10,19 @@
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <title>
         Student Login
-        
+
     </title>
 </head>
 
 <body>
     <div id="container" class="container">
-        
+
         <!-- FORM SECTION -->
         <div class="row">
             <!-- SIGN UP -->
             <div class="col align-items-center flex-col sign-up">
+            <form method="POST" enctype="multipart/form-data" action="{% url 'register' %}">
+
                 <div class="form-wrapper align-items-center">
                     <div class="form sign-up">
                         <div class="input-group">
@@ -33,9 +35,9 @@
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password" name="password>
+                            <input type="password" placeholder="Password" name="password">
                         </div>
-                        <div class="input-group">
+                        <div class=" input-group">
                             <i class='bx bxs-lock-alt'></i>
                             <input type="password" placeholder="Confirm password" name="confirm_password">
                         </div>
@@ -47,8 +49,7 @@
                                 Already have an account?
                             </span>
                             <b onclick="toggle()" class="pointer">
-                                Sign in here
-                            </b>
+                                Sign in here</b>
                         </p>
                     </div>
                 </div>
@@ -66,38 +67,41 @@
                     </div>
                 </div>
             </div>
+            </form>
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                {% csrf_token %}
-                <div class="form-wrapper align-items-center">
-                    <div class="form sign-in">
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="Register Number" name="Register_No">
+                <form method="POST" enctype="multipart/form-data" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="form-wrapper align-items-center">
+                        <div class="form sign-in">
+                            <div class="input-group">
+                                <i class='bx bxs-user'></i>
+                                <input type="text" placeholder="Register Number" name="Register_No">
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bxs-lock-alt'></i>
+                                <input type="password" placeholder="Password" name="password">
+                            </div>
+                            <button type="submit" style="color: aliceblue;">
+                                Sign in
+                            </button>
+                            <p>
+                                <b>
+                                    Forgot password?
+                                </b>
+                            </p>
+                            <p>
+                                <span>
+                                    Don't have an account?
+                                </span>
+                                <b onclick="toggle()" class="pointer">
+                                    Sign up here
+                                </b>
+                            </p>
                         </div>
-                        <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password" name="password">
-                        </div>
-                        <button type="submit" style="color: aliceblue;" onclick="window.location.href="{% url 'dashboard' %}">
-                            Sign in
-                        </button>
-                        <p>
-                            <b>
-                                Forgot password?
-                            </b>
-                        </p>
-                        <p>
-                            <span>
-                                Don't have an account?
-                            </span>
-                            <b onclick="toggle()" class="pointer">
-                                Sign up here
-                            </b>
-                        </p>
                     </div>
-                </div>
+                </form>
                 <div class="form-wrapper">
                     <div class="social-list align-items-center sign-in">
                         <div class="align-items-center google-bg">
@@ -107,7 +111,8 @@
                             <a href="https://twitter.com/christlavasa?lang=en"><i class='bx bxl-twitter'></i></a>
                         </div>
                         <div class="align-items-center insta-bg">
-                            <a href="https://www.instagram.com/christ_university_lavasa/?hl=en"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="https://www.instagram.com/christ_university_lavasa/?hl=en"><i
+                                    class='bx bxl-instagram-alt'></i></a>
                         </div>
                     </div>
                 </div>
