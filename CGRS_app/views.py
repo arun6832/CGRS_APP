@@ -35,8 +35,17 @@ def HODprofile(request):
 def HODtable(request):
     return render(request,'HODtable.html')
 
-def dashboard(request):
-    return render(request,'dashboard.html')
+def studentDashboard(request):
+    return render(request,'studentDashboard.html')
+
+def studentGreivance(request):
+    return render(request,'studentGreivance.html')
+
+def studentReports(request):
+    return render(request,'studentReports.html')
+
+def studentUsers(request):
+    return render(request,'studentUsers.html')
 
 def HODnot(request):
     return render(request,'HODnot.html')

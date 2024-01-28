@@ -71,7 +71,7 @@
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                <form method="POST" enctype="multipart/form-data" action="{% url 'login' %}">
+                <form method="POST" enctype="multipart/form-data" action="{% url 'studentDashboard' %}">
                     {% csrf_token %}
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
