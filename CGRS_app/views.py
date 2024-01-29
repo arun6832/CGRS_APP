@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .models import user_login,user_register
+from .models import user_login,user_register,User
 
 
 
@@ -35,8 +35,8 @@ def HODprofile(request):
 def HODtable(request):
     return render(request,'HODtable.html')
 
-def studentDashboard(request):
-    return render(request,'studentDashboard.html')
+def std_form(request):
+    return render(request,'std_form.html')
 
 def studentGreivance(request):
     return render(request,'studentGreivance.html')
@@ -49,6 +49,9 @@ def studentUsers(request):
 
 def HODnot(request):
     return render(request,'HODnot.html')
+
+def form(request):
+    return render(request,'/student/form.html')
 
 def user_login(request):
     if request.method == "POST":

@@ -21,8 +21,8 @@
         <div class="row">
             <!-- SIGN UP -->
             <div class="col align-items-center flex-col sign-up">
-            <form method="POST" enctype="multipart/form-data" action="{% url 'register' %}">
-            {% csrf_token %}
+                <!-- <form method="POST" enctype="multipart/form-data" action="{% url 'register' %}"> -->
+                <!-- {% csrf_token %} -->
                 <div class="form-wrapper align-items-center">
                     <div class="form sign-up">
                         <div class="input-group">
@@ -34,44 +34,38 @@
                             <input type="email" placeholder="Email" name="email">
                         </div>
                         <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password" name="password">
+                            <textarea id="w3review" name="w3review" rows="4" cols="55"
+                                placeholder="Complaints"></textarea>
                         </div>
-                        <div class=" input-group">
+                        <div>
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Confirm password" name="confirm_password">
+                            <label></label>
+                            <input type="file" id="myFile" name="Upload Here"
+                                style="font-weight: bolder;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
                         </div>
                         <button type="submit">
-                            Sign up
+                            Submit
                         </button>
-                        <p>
-                            <span>
-                                Already have an account?
-                            </span>
-                            <b onclick="toggle()" class="pointer">
-                                Sign in here</b>
-                        </p>
+                        <br>
+                        <br>
+                        <h2 style="font-style: italic;"><b>OR</b></h2>
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" placeholder="Register Number" name="Register_No">
+                        </div>
+                        <button type="submit">
+                            Check Status
+                        </button>
                     </div>
                 </div>
-                <div class="form-wrapper">
-                    <div class="social-list align-items-center sign-up">
-                        <div class="align-items-center google-bg">
-                            <i class='bx bxl-google'></i>
-                        </div>
-                        <div class="align-items-center twitter-bg">
-                            <i class='bx bxl-twitter'></i>
-                        </div>
-                        <div class="align-items-center insta-bg">
-                            <i class='bx bxl-instagram-alt'></i>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             </form>
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                <form method="POST" enctype="multipart/form-data" action="{% url 'std_form' %}">
+                <form method="POST" enctype="multipart/form-data" action="{% url 'login' %}">
                     {% csrf_token %}
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
@@ -95,9 +89,7 @@
                                 <span>
                                     Don't have an account?
                                 </span>
-                                <b onclick="toggle()" class="pointer">
-                                    Sign up here
-                                </b>
+
                             </p>
                         </div>
                     </div>
@@ -146,7 +138,7 @@
                 </div>
                 <div class="text sign-up">
                     <h2>
-                        Join with us
+                        Whine Now !!
                     </h2>
                     <p>
                         If procrastination had a complaint department, we'd be its customer service hotline. Submit your
@@ -159,7 +151,21 @@
         <!-- END CONTENT SECTION -->
     </div>
 
-    <script src="{% static 'js/login.js' %}"></script>
+    <script>
+        let container = document.getElementById('container');
+
+        toggle = () => {
+            container.classList.toggle('sign-up');
+            container.classList.toggle('sign-in');
+        }
+
+        // Show sign-up page initially
+        setTimeout(() => {
+            container.classList.add('sign-up');
+        }, 200);
+
+
+    </script>
 </body>
 
 </html>
