@@ -91,3 +91,4 @@ def user_register(request):
             # return redirect('success')
             
     return render(request, 'login.html')
+
