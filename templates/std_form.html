@@ -18,7 +18,7 @@
     <div id="container" class="container">
 
         <!-- FORM SECTION -->
-        <form method="POST" enctype="multipart/form-data" action="{% url 'std_dashboard' %}">
+        <form method="POST">
             {% csrf_token %}
             <div class="row">
                 <!-- SIGN UP -->
@@ -29,7 +29,7 @@
                         <div class="form sign-up">
                             <div class="input-group">
                                 <i class='bx bxs-user'></i>
-                                <input type="text" placeholder="Register Number" name="Register_No">
+                                <input type="text" placeholder="Register Number" name="Register_No" required>
                             </div>
                             <div class="input-group">
                                 <i class='bx bx-mail-send'></i>
@@ -50,7 +50,7 @@
                                 Submit
                             </button>
         </form>
-        <form method="POST" enctype="multipart/form-data" action="{% url 'std_thankyou' %}">
+        <form method="POST">
             {% csrf_token %}
             <br>
             <br>

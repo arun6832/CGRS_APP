@@ -35,7 +35,7 @@ def HODprofile(request):
 def HODtable(request):
     return render(request,'HODtable.html')
 
-def std_form(request):
+def std_form(request):   
     return render(request,'std_form.html')
 
 def std_dashboard(request):
@@ -55,18 +55,16 @@ def form(request):
 
 def user_login(request):
     if request.method == "POST":
-        Register_No = request.POST.get('Register_No')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        print(Register_No,password)
-        user = authenticate(request,username=Register_No,password=password)
-        print(user)
+        user = authenticate(request,username=username,password=password)
         if user is not None and user.is_active:
-            if user.is_superuser==False and user.is_staff==True:
+            if user.is_superuser==True and user.is_staff==True:
                 login(request,user)
-                return redirect('dashboard')
+                return redirect('std_form')
             elif user.is_superuser==False and user.is_staff==False:
                 login(request,user)
-                return redirect('dashboard')
+                return redirect('std_form')
         elif user is None:
             msg = "Wrong credentials. Please try again!"
             return render(request , 'login.html' , {'msg':msg})

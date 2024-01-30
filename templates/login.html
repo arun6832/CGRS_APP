@@ -71,17 +71,17 @@
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                <form method="POST" enctype="multipart/form-data" action="{% url 'std_form' %}">
+                <form method="POST">
                     {% csrf_token %}
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
                             <div class="input-group">
                                 <i class='bx bxs-user'></i>
-                                <input type="text" placeholder="Register Number" name="Register_No">
+                                <input type="text" placeholder="Username" name="username"required>
                             </div>
                             <div class="input-group">
                                 <i class='bx bxs-lock-alt'></i>
-                                <input type="password" placeholder="Password" name="password">
+                                <input type="password" placeholder="Password" name="password" required>
                             </div>
                             <button type="submit" style="color: aliceblue;">
                                 Sign in
@@ -127,7 +127,11 @@
                 {% csrf_token %}
                 <div class="text sign-in">
                     <h2>
+                        {% if msg %}
+                        {{ msg }}
+                        {% else %}
                         Student Login
+                        {% endif %}
                     </h2>
                     <p>
                         Roses are red, violets are blue, if your grades are dropping, submit a grievance or two! Our
