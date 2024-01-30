@@ -38,11 +38,11 @@ def HODtable(request):
 def std_form(request):
     return render(request,'std_form.html')
 
-def studentGreivance(request):
-    return render(request,'studentGreivance.html')
+def std_dashboard(request):
+    return render(request,'std_dashboard.html')
 
-def studentReports(request):
-    return render(request,'studentReports.html')
+def std_thankyou(request):
+    return render(request,'std_thankyou.html')
 
 def studentUsers(request):
     return render(request,'studentUsers.html')
