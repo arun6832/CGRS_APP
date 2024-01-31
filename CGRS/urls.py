@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from CGRS_app.views import index, user_register,HOD,HODprofile,HODtable,HODnot, user_login,std_form,std_dashboard,std_thankyou,studentUsers
+from CGRS_app.views import index, user_register,HOD,HODprofile,HODtable,HODnot, user_login,std_form,std_dashboard,std_thankyou,std_registration
 
 urlpatterns = [
     path('admin/',admin.site.urls),
@@ -30,7 +30,7 @@ urlpatterns = [
     path('std_form',std_form,name='std_form'),
     path('std_dashboard',std_dashboard,name='std_dashboard'),
     path('std_thankyou',std_thankyou,name='std_thankyou'),
-    path('studentUsers',studentUsers,name='studentUsers'),
+    path('std_registration',std_registration,name='std_registration')
 ]
 
 

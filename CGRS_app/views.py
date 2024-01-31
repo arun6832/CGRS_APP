@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from .models import user_login,user_register,User
+from django.db import IntegrityError
+
 
 
 
@@ -44,8 +47,8 @@ def std_dashboard(request):
 def std_thankyou(request):
     return render(request,'std_thankyou.html')
 
-def studentUsers(request):
-    return render(request,'studentUsers.html')
+def std_registration(request):
+    return render(request,'std_registration.html')
 
 def HODnot(request):
     return render(request,'HODnot.html')
@@ -70,26 +73,52 @@ def user_login(request):
             return render(request , 'login.html' , {'msg':msg})
     return render(request , 'login.html')
 
+# def user_register(request):
+#     if request.method=='POST':
+#         username=request.POST['username']
+#         if User.objects.filter(username=username).exists():
+#             msg = 'Username already exists!'
+#             return render(request, 'login.html',{'msg':msg})
+#         else:
+#             email=request.POST['email']
+#             password=request.POST['password']
+#             confirm_password=request.POST['confirm_passoword']
+            
+#             User.objects.create(username=username,email=email,password=password,confirm_password=confirm_password)
+#             user1=User.objects.filter(username=username,password=password,email=email,confirm_password=confirm_password)
+#             for i in user1:
+#                 if i.Register_No==username:
+#                     user=i.id
+#                     break
+#             user = User.objects.get(id=user)
+#         return render(request, 'login.html')
+
+
 def user_register(request):
-    if request.method=='POST':
-        Register_No=request.POST['name']
-        if User.objects.filter(Register_No=Register_No).exists():
-            msg = 'Register Number already exists!'
-            return render(request, 'login.html',{'msg':msg})
-        else:
-            email=request.POST['email']
-            password=request.POST['password']
-            confirm_password=request.POST['confirm_passoword']
-            
-            User.objects.create(Register_No=Register_No,email=email,password=password,confirm_password=confirm_password)
-            user1=User.objects.filter(Register_No=Register_No,password=password,email=email,confirm_password=confirm_password)
-            for i in user1:
-                if i.Register_No==Register_No:
-                    user=i.id
-                    break
-            user = User.objects.get(id=user)
-            # user_details.objects.create(user=user,Phone=phone,Qualification=qualification,Interest=interest)
-            # return redirect('success')
-            
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+
+        # Check if passwords match
+        if password != confirm_password:
+            msg = 'Passwords do not match!'
+            return render(request, 'login.html', {'msg': msg})
+
+        try:
+            # Create the user
+            user = User.objects.create_user(username=username, email=email, password=password)
+            # Additional check (if you have a 'Register_No' field in your model)
+            if hasattr(user, 'Register_No') and user.Register_No == username:
+                return render(request, 'login.html')
+        except IntegrityError as e:
+            msg = 'An error occurred. Please try again.'
+            return render(request, 'login.html', {'msg': msg})
+        except ValueError as e:
+            msg = 'Invalid input. Please check your data and try again.'
+            return render(request, 'login.html', {'msg': msg})
+
+    return render(request, 'registration.html')
+
 
