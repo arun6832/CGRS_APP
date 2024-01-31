@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
+<<<<<<< HEAD
 from CGRS_app.views import index,HOD,HODprofile,HODtable,HODnot, user_login,std_form,studentGreivance,studentReports,studentUsers,staff_reg, admin_reg,newReg
+=======
+from CGRS_app.views import index, user_register,HOD,HODprofile,HODtable,HODnot, user_login,std_form,std_dashboard,std_thankyou,std_registration
+>>>>>>> 4a6d8bf4b0fc8507f20bc4bc2423618a4edc5069
 
 urlpatterns = [
     path('admin/',admin.site.urls),
@@ -28,12 +32,18 @@ urlpatterns = [
     path('HODtable',HODtable,name='HODtable'),
     path('HODnot',HODnot,name='HODnot'),
     path('std_form',std_form,name='std_form'),
+<<<<<<< HEAD
     path('studentGreivance',studentGreivance,name='studentGreivance'),
     path('studentReports',studentReports,name='studentReports'),
     path('studentUsers',studentUsers,name='studentUsers'),
     path('staff_form',staff_reg,name='staff_form'),
     path('test_user',admin_reg,name='admin_reg'),
     path('newReg',newReg,name='newReg')
+=======
+    path('std_dashboard',std_dashboard,name='std_dashboard'),
+    path('std_thankyou',std_thankyou,name='std_thankyou'),
+    path('std_registration',std_registration,name='std_registration')
+>>>>>>> 4a6d8bf4b0fc8507f20bc4bc2423618a4edc5069
 ]
 
 
