@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from .models import user_login,user_register,User
+from django.contrib.auth.models import User
+from CGRS_app.models import New_Reg
 
 
 
@@ -72,26 +73,61 @@ def user_login(request):
             return render(request , 'login.html' , {'msg':msg})
     return render(request , 'login.html')
 
-def user_register(request):
-    if request.method=='POST':
-        Register_No=request.POST['name']
-        if User.objects.filter(Register_No=Register_No).exists():
-            msg = 'Register Number already exists!'
-            return render(request, 'login.html',{'msg':msg})
-        else:
-            email=request.POST['email']
-            password=request.POST['password']
-            confirm_password=request.POST['confirm_passoword']
+# def user_Register(request):
+#     if request.method=='POST':
+#         RegNo=request.POST.get('Register_No')
+#         Email=request.POST.get('email')
+#         # if User.objects.filter(Register_No=RegNo).exists():
+#         #     msg = 'Register Number already exists!'
+#         #     return render(request, 'login.html',{'msg':msg})
+#         # else:
+           
+#         Password=request.POST.get('password')
+#         Confirm_password=request.POST.get('confirm_password')
             
-            User.objects.create(Register_No=Register_No,email=email,password=password,confirm_password=confirm_password)
-            user1=User.objects.filter(Register_No=Register_No,password=password,email=email,confirm_password=confirm_password)
-            for i in user1:
-                if i.Register_No==Register_No:
-                    user=i.id
-                    break
-            user = User.objects.get(id=user)
-            # user_details.objects.create(user=user,Phone=phone,Qualification=qualification,Interest=interest)
-            # return redirect('success')
-            
+#         # my_user=User.objects.create_user(RegNo,Email,Password)
+#         # my_user.save()
+#         # user1=User.objects.filter(Register_No=Register_No,password=password,email=email,confirm_password=confirm_password)
+#         # for i in user1:
+#         #         if i.Register_No==Register_No:
+#         #             user=i.id
+#         #             break
+#         # user = User.objects.get(id=user)
+#             # user_details.objects.create(user=user,Phone=phone,Qualification=qualification,Interest=interest)
+#             # return redirect('success')
+#         user=User(
+#             username=RegNo,
+#             email=Email,
+#             password=Password
+#         )  
+#         user.save()
+
     return render(request, 'login.html')
+
+def staff_reg(request):
+    return render(request, 'staff_form.html')
+
+def admin_reg(request):
+    return render(request, 'testuser.html')
+
+def newReg(request):
+    if request.method == 'POST':
+        namE = request.POST.get('Name')
+        emaiL = request.POST.get('Email')
+        reg_nO = request.POST.get('Reg_no')
+        
+        pasS = request.POST.get('Pass')
+
+        my_user = User.objects.create_user(namE,emaiL,pasS)
+        my_user.save()
+
+        Regs = New_Reg(
+            name = namE,
+            email = emaiL,
+            reg_no = reg_nO,
+        )
+        Regs.save()
+        return redirect('index')   
+
+    return render(request,'newreg.html')
 

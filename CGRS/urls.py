@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from CGRS_app.views import index, user_register,HOD,HODprofile,HODtable,HODnot, user_login,std_form,studentGreivance,studentReports,studentUsers
+from CGRS_app.views import index,HOD,HODprofile,HODtable,HODnot, user_login,std_form,studentGreivance,studentReports,studentUsers,staff_reg, admin_reg,newReg
 
 urlpatterns = [
     path('admin/',admin.site.urls),
     path('', index, name='index'),
     path('login', user_login, name='login'),
-    path('signup',user_register,name='register'),
+    # path('signup',user_Register,name='register'),
     path('HOD',HOD,name='HOD'),
     path('HODprofile',HODprofile,name='HODprofile'),
     path('HODtable',HODtable,name='HODtable'),
@@ -31,6 +31,9 @@ urlpatterns = [
     path('studentGreivance',studentGreivance,name='studentGreivance'),
     path('studentReports',studentReports,name='studentReports'),
     path('studentUsers',studentUsers,name='studentUsers'),
+    path('staff_form',staff_reg,name='staff_form'),
+    path('test_user',admin_reg,name='admin_reg'),
+    path('newReg',newReg,name='newReg')
 ]
 
 
