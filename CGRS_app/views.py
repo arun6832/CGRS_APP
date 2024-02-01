@@ -107,9 +107,6 @@ def user_login(request):
 def staff_reg(request):
     return render(request, 'staff_form.html')
 
-def admin_reg(request):
-    return render(request, 'testuser.html')
-
 def testdashboard(request):
     return render(request,'testdashboard.html')
 
@@ -137,3 +134,5 @@ def newReg(request):
 
     return render(request,'newreg.html')
 
+def admin_login(request):
+    return render(request, 'admin_login.html')
