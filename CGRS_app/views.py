@@ -54,24 +54,25 @@ def HODnot(request):
 def form(request):
     return render(request,'/student/form.html')
 
+
 def user_login(request):
     if request.method == "POST":
-        Register_No = request.POST.get('Register_No')
+        register_no = request.POST.get('Register_No')
         password = request.POST.get('password')
-        print(Register_No,password)
-        user = authenticate(request,username=Register_No,password=password)
-        print(user)
+
+        user = authenticate(request, username=register_no, password=password)
+
         if user is not None and user.is_active:
-            if user.is_superuser==False and user.is_staff==True:
-                login(request,user)
-                return redirect('dashboard')
-            elif user.is_superuser==False and user.is_staff==False:
-                login(request,user)
-                return redirect('dashboard')
-        elif user is None:
+            login(request, user)
+            return redirect('index')
+        else:
             msg = "Wrong credentials. Please try again!"
-            return render(request , 'login.html' , {'msg':msg})
-    return render(request , 'login.html')
+            return render(request, 'login.html', {'msg': msg})
+
+    return render(request, 'login.html')
+
+
+
 
 # def user_Register(request):
 #     if request.method=='POST':
@@ -131,3 +132,5 @@ def newReg(request):
 
     return render(request,'newreg.html')
 
+def std_login(request):
+    return render(request,'login.html')
