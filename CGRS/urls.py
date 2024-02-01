@@ -35,7 +35,7 @@ urlpatterns = [
     path('test_user',admin_reg,name='admin_reg'),
     path('testdashboard',testdashboard,name='testdashboard'),
     path('testgrievances',testgrievance,name='testgrievances'),
-    path('newReg',newReg,name='newReg')
+    path('newReg',newReg,name='newReg'),
 ]
 
 
