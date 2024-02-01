@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +106,7 @@
 
     <div class="login-container">
         <div class="login-box">
-            <img src="log.png" alt="Logo" class="logo">
+            <img src="{% static 'images/log.png' %}" alt="Logo" class="logo">
             <h2>Admin Login</h2>
             <form id="loginForm">
                 <input type="text" placeholder="Username" id="username" required>
@@ -125,7 +126,7 @@
             if (username === 'admin' && password === 'password') {
                 alert('Login successful');
                 // Redirect to admin dashboard or desired page
-                window.location.href = 'testdashboard.html';
+                window.location.href = "{% url 'testdashboard' %}";
             } else {
                 alert('Invalid username or password');
             }
