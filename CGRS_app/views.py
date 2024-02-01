@@ -108,8 +108,11 @@ def user_login(request):
 def staff_reg(request):
     return render(request, 'staff_form.html')
 
-def admin_reg(request):
-    return render(request, 'testuser.html')
+def testdashboard(request):
+    return render(request,'testdashboard.html')
+
+def testgrievance(request):
+    return render(request,'testgrievances.html')
 
 def newReg(request):
     if request.method == 'POST':
@@ -132,5 +135,16 @@ def newReg(request):
 
     return render(request,'newreg.html')
 
+<<<<<<< HEAD
 def std_login(request):
     return render(request,'login.html')
+=======
+def admin_login(request):
+    return render(request, 'admin_login.html')
+
+def testuser(request):
+    return render(request,'testuser.html')
+
+def testreports(request):
+    return render(request,'testreports.html')
+>>>>>>> 8701c588fbf8796b57fdf40022cb00e0a8612db2

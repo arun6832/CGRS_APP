@@ -1,3 +1,4 @@
+<% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -30,7 +32,8 @@
 
         .container {
             display: grid;
-            grid-template-columns: 385px auto; /* Adjusted grid-template-columns */
+            grid-template-columns: 385px auto;
+            /* Adjusted grid-template-columns */
             grid-template-rows: 1fr;
             height: 100vh;
         }
@@ -220,22 +223,22 @@
 
     <div class="container">
         <!--sidebar start-->
-
         <div class="side-bar">
-            <a href="testdashboard.html" class="nav-heading clickable">
+            <a href="{% url 'testdashboard' %}" class="nav-heading clickable">
                 <!-- Added anchor tag with href -->
-                <img class="dash-image" src="dashboard-removebg-preview.png" alt="dashboard icon">Home
+                <img class="dash-image" src="{% static 'images/dashboard-removebg-preview.png' %}"
+                    alt="dashboard icon">Home
             </a>
             <div class="nav-bar">
                 <ul class="nav-list nav-styles">
-                    <li><a href="testgrievances.html"><img class="simple-icon" src="grievance-removebg-preview.png"
+                    <li><a href="{% url 'testgrievances' %}"><img class="simple-icon"
+                                src="{% static 'images/grievance-removebg-preview.png' %}"
                                 alt="grievance icon">Grievances</a></li>
-                    <li><a href="testuser.html"><img class="simple-icon" src="user-removebg-preview.png"
-                                alt="user icon">Users</a></li>
-                    <li><a href="testreports.html"><img class="simple-icon" src="reports-removebg-preview (1).png"
+                    <li><a href="{% url 'testuser' %}"><img class="simple-icon"
+                                src="{% static 'images/user-removebg-preview.png' %}" alt="user icon">Users</a></li>
+                    <li><a href="{% url 'testreports' %}"><img class="simple-icon"
+                                src="{% static 'images/reports-removebg-preview (1).png' %}"
                                 alt="report icon">Reports</a></li>
-                    <li><a href="support.html"><img class="simple-icon" src="support-removebg-preview.png"
-                                alt="support icon">Support</a></li>
                 </ul>
             </div>
         </div>
