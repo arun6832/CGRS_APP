@@ -110,6 +110,12 @@ def staff_reg(request):
 def admin_reg(request):
     return render(request, 'testuser.html')
 
+def testdashboard(request):
+    return render(request,'testdashboard.html')
+
+def testgrievance(request):
+    return render(request,'testgrievances.html')
+
 def newReg(request):
     if request.method == 'POST':
         namE = request.POST.get('Name')

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -187,16 +188,15 @@
         <!--sidebar start-->
 
         <div class="side-bar">
-            <a href="testdashboard.html" class="nav-heading clickable">
+            <a href="{% url 'testdashboard' %}" class="nav-heading clickable">
                 <!-- Added anchor tag with href -->
-                <img class="dash-image" src="dashboard-removebg-preview.png" alt="dashboard icon">Home
+                <img class="dash-image" src="{% static 'images/dashboard-removebg-preview.png' %}" alt="dashboard icon">Home
             </a>
             <div class="nav-bar">
                 <ul class="nav-list nav-styles">
-                    <li><a href="testgrievances.html"><img class="simple-icon" src="grievance-removebg-preview.png" alt="grievance icon">Grievances</a></li>
-                    <li><a href="testuser.html"><img class="simple-icon" src="user-removebg-preview.png" alt="user icon">Users</a></li>
-                    <li><a href="testreports.html"><img class="simple-icon" src="reports-removebg-preview (1).png" alt="report icon">Reports</a></li>
-                    <li><a href="support.html"><img class="simple-icon" src="support-removebg-preview.png" alt="support icon">Support</a></li>
+                    <li><a href="{% url 'testgrievances' %}"><img class="simple-icon" src="{% static 'images/grievance-removebg-preview.png' %}" alt="grievance icon">Grievances</a></li>
+                    <li><a href="{% url 'test_user' %}"><img class="simple-icon" src="{% static 'images/user-removebg-preview.png' %}" alt="user icon">Users</a></li>
+                    <li><a href="{% url 'testreports' %}"><img class="simple-icon" src="{% static 'images/reports-removebg-preview (1).png' %}" alt="report icon">Reports</a></li>
                 </ul>
             </div>
         </div>

@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Admin Dashboard</title>
 </head>
@@ -29,7 +31,8 @@
 
     .container {
         display: grid;
-        grid-template-columns: 1fr 4fr; /* Updated grid-template-columns */
+        grid-template-columns: 1fr 4fr;
+        /* Updated grid-template-columns */
         grid-template-rows: 1fr;
         height: 100vh;
     }
@@ -62,7 +65,8 @@
     }
 
     .dash-image {
-        width: 90px; /* Larger icon size */
+        width: 90px;
+        /* Larger icon size */
         padding-right: 20px;
     }
 
@@ -78,13 +82,16 @@
     }
 
     .simple-icon {
-        width: 70px; /* Larger icon size */
+        width: 70px;
+        /* Larger icon size */
         margin-right: 20px;
-        transition: transform 0.3s ease; /* Added transition effect */
+        transition: transform 0.3s ease;
+        /* Added transition effect */
     }
 
     .simple-icon:hover {
-        transform: scale(1.2); /* Added hover effect */
+        transform: scale(1.2);
+        /* Added hover effect */
     }
 
     .nav-bar {
@@ -111,7 +118,8 @@
 
     section {
         padding: 20px;
-        grid-column: 2 / 3; /* Added grid-column to position the section */
+        grid-column: 2 / 3;
+        /* Added grid-column to position the section */
     }
 
     table {
@@ -187,23 +195,28 @@
         <!--sidebar start-->
 
         <div class="side-bar">
-            <a href="testdashboard.html" class="nav-heading clickable">
+            <a href="{% url 'testdashboard' %}" class="nav-heading clickable">
                 <!-- Added anchor tag with href -->
-                <img class="dash-image" src="dashboard-removebg-preview.png" alt="dashboard icon">Home
+                <img class="dash-image" src="{% static 'images/dashboard-removebg-preview.png' %}"
+                    alt="dashboard icon">Home
             </a>
             <div class="nav-bar">
                 <ul class="nav-list nav-styles">
-                    <li><a href="testgrievances.html"><img class="simple-icon" src="grievance-removebg-preview.png" alt="grievance icon">Grievances</a></li>
-                    <li><a href="testuser.html"><img class="simple-icon" src="user-removebg-preview.png" alt="user icon">Users</a></li>
-                    <li><a href="testreports.html"><img class="simple-icon" src="reports-removebg-preview (1).png" alt="report icon">Reports</a></li>
-                    <li><a href="support.html"><img class="simple-icon" src="support-removebg-preview.png" alt="support icon">Support</a></li>
+                    <li><a href="{% url 'testgrievances' %}"><img class="simple-icon"
+                                src="{% static 'images/grievance-removebg-preview.png' %}"
+                                alt="grievance icon">Grievances</a></li>
+                    <li><a href="{% url 'testuser' %}"><img class="simple-icon"
+                                src="{% static 'images/user-removebg-preview.png' %}" alt="user icon">Users</a></li>
+                    <li><a href="{% url 'testreports' %}"><img class="simple-icon"
+                                src="{% static 'images/reports-removebg-preview (1).png' %}"
+                                alt="report icon">Reports</a></li>
                 </ul>
             </div>
         </div>
         <!--sidebar end-->
         <section>
             <h2>All Grievances</h2>
-    
+
             <table>
                 <thead>
                     <tr>
@@ -234,7 +247,7 @@
                 </tbody>
             </table>
         </section>
-    
+
         <footer>
             &copy; 2024 Student Grievance System
         </footer>
