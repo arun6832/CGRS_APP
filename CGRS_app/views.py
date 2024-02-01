@@ -136,3 +136,9 @@ def newReg(request):
 
 def admin_login(request):
     return render(request, 'admin_login.html')
+
+def testuser(request):
+    return render(request,'testuser.html')
+
+def testreports(request):
+    return render(request,'testreports.html')
