@@ -21,7 +21,6 @@
         <div class="row">
             <!-- SIGN UP -->
             <div class="col align-items-center flex-col sign-up">
-<<<<<<< HEAD
             <form method="POST" enctype="multipart/form-data" action="{% url 'register' %}">
             {% csrf_token %}
                 <div class="form-wrapper align-items-center">
@@ -73,69 +72,16 @@
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
                 <form method="POST" enctype="multipart/form-data" action="{% url 'std_form' %}">
-=======
-                <form method="POST" enctype="multipart/form-data" action="{% url 'register' %}">
->>>>>>> 4a6d8bf4b0fc8507f20bc4bc2423618a4edc5069
-                    {% csrf_token %}
-                    <div class="form-wrapper align-items-center">
-                        <div class="form sign-up">
-                            <div class="input-group">
-                                <i class='bx bxs-user'></i>
-                                <input type="text" placeholder="Register Number" name="Register_No">
-                            </div>
-                            <div class="input-group">
-                                <i class='bx bx-mail-send'></i>
-                                <input type="email" placeholder="Email" name="email">
-                            </div>
-                            <div class="input-group">
-                                <i class='bx bxs-lock-alt'></i>
-                                <input type="password" placeholder="Password" name="password">
-                            </div>
-                            <div class=" input-group">
-                                <i class='bx bxs-lock-alt'></i>
-                                <input type="password" placeholder="Confirm password" name="confirm_password">
-                            </div>
-                            <button type="submit">
-                                Sign up
-                            </button>
-                            <p>
-                                <span>
-                                    Already have an account?
-                                </span>
-                                <b><a href="{% url 'std_registration' %}">
-                                        Sign in here</a></b>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form-wrapper">
-                        <div class="social-list align-items-center sign-up">
-                            <div class="align-items-center google-bg">
-                                <i class='bx bxl-google'></i>
-                            </div>
-                            <div class="align-items-center twitter-bg">
-                                <i class='bx bxl-twitter'></i>
-                            </div>
-                            <div class="align-items-center insta-bg">
-                                <i class='bx bxl-instagram-alt'></i>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            </form>
-            <!-- END SIGN UP -->
-            <!-- SIGN IN -->
-            <div class="col align-items-center flex-col sign-in">
-                <form method="POST">
                     {% csrf_token %}
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
                             <div class="input-group">
                                 <i class='bx bxs-user'></i>
-                                <input type="text" placeholder="Username" name="username" required>
+                                <input type="text" placeholder="Register Number" name="Register_No">
                             </div>
                             <div class="input-group">
                                 <i class='bx bxs-lock-alt'></i>
-                                <input type="password" placeholder="Password" name="password" required>
+                                <input type="password" placeholder="Password" name="password">
                             </div>
                             <button type="submit" style="color: aliceblue;">
                                 Sign in
@@ -149,8 +95,9 @@
                                 <span>
                                     Don't have an account?
                                 </span>
-                                <b><a href="{% url 'std_registration' %}">
-                                        Sign in here</a></b>
+                                <b onclick="toggle()" class="pointer">
+                                    Sign up here
+                                </b>
                             </p>
                         </div>
                     </div>
@@ -180,11 +127,7 @@
                 {% csrf_token %}
                 <div class="text sign-in">
                     <h2>
-                        {% if msg %}
-                        {{ msg }}
-                        {% else %}
                         Student Login
-                        {% endif %}
                     </h2>
                     <p>
                         Roses are red, violets are blue, if your grades are dropping, submit a grievance or two! Our
