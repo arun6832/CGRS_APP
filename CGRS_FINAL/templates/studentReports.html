@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Admin Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-image: url('https://lavasa.christuniversity.in/images/histry-bnner.jpg');
+            background-size: cover;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 385px auto;
+            /* Adjusted grid-template-columns */
+            grid-template-rows: 1fr;
+            height: 100vh;
+        }
+
+        /* sidebar start */
+
+        .side-bar {
+            color: white;
+            background-color: rgba(25, 146, 212, 255);
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            padding: 15px 20px 20px 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto 1fr;
+            grid-gap: 35px;
+            list-style-type: none;
+        }
+
+        .nav-heading {
+            font-weight: bold;
+            font-size: 20px;
+            grid-row: 1 / 2;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            /* Added cursor pointer to indicate it's clickable */
+        }
+
+        .dash-image {
+            width: 90px;
+            /* Larger icon size */
+            padding-right: 20px;
+        }
+
+        .side-bar li {
+            font-weight: bold;
+            font-size: 20px;
+            grid-row: 1 / 2;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            /* Added cursor pointer to indicate it's clickable */
+        }
+
+        .simple-icon {
+            width: 70px;
+            /* Larger icon size */
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+            /* Added transition effect */
+        }
+
+        .simple-icon:hover {
+            transform: scale(1.2);
+            /* Added hover effect */
+        }
+
+        .nav-bar {
+            grid-row: 2 / 3;
+        }
+
+        .nav-styles {
+            list-style-type: none;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .nav-styles li {
+            padding-bottom: 20px;
+        }
+
+        /* Align the text in the nav bar icons in center */
+        .nav-styles li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        section {
+            padding: 20px;
+            /*grid-column: 2 / 3;*/
+            /* Added grid-column to position the section */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            margin-top: 20px;
+            font-size: 130%;
+        }
+
+        label,
+        select {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 30%;
+            padding: 10px;
+            font-size: 16px;
+            /* Adjust the font size */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        section#reports {
+            background-color: #fff;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2.report-title {
+            color: #333;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+            max-width: 400px;
+            /* Set a maximum width for the charts */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .graphs-container {
+            grid-column: 2.5 / 3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Student Grievance System - Admin Module</h1>
+    </header>
+
+    <div class="container">
+        <!--sidebar start-->
+
+        <div class="side-bar">
+            <a href="testdashboard.html" class="nav-heading clickable">
+                <!-- Added anchor tag with href -->
+                <img class="dash-image" src="dashboard-removebg-preview.png" alt="dashboard icon">Home
+            </a>
+            <div class="nav-bar">
+                <ul class="nav-list nav-styles">
+                    <li><a href="{% url 'studentGreivance' %}"><img class="simple-icon"
+                                src="{% static '/images/grievance-removebg-preview.png' %}"
+                                alt="grievance icon">Grievances</a></li>
+                    <li><a href="{% url 'studentUsers' %}"><img class="simple-icon"
+                                src="{% static 'user-removebg-preview.png' %}" alt="user icon">Users</a></li>
+                    <li><a href="{% url 'studentReports' %}"><img class="simple-icon"
+                                src="{% static 'images/reports-removebg-preview (1).png' %}"
+                                alt="report icon">Reports</a></li>
+                    <!-- <li><a href="support.html"><img class="simple-icon" src="support-removebg-preview.png" alt="support icon">Support</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!--sidebar end-->
+        <div class="graphs-container">
+            <section id="reports">
+                <h2 class="report-title">Reports</h2>
+
+                <div class="chart-container">
+                    <h3>Category-wise Reports</h3>
+                    <canvas id="categoryChart" width="400" height="200"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Timeline Analysis</h3>
+                    <canvas id="timelineChart" width="400" height="200"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Grievance Status Reports</h3>
+                    <canvas id="statusChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Add more charts and reports as needed -->
+
+            </section>
+            <!-- End Reports Section -->
+        </div>
+        <footer>
+            &copy; 2024 Student Grievance System
+        </footer>
+        <script>
+            // Example data for charts
+            var categoryData = {
+                labels: ['Academic', 'Financial', 'Technical', 'Other'],
+                datasets: [{
+                    label: 'Category-wise Reports',
+                    data: [30, 20, 15, 35],
+                    backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#f39c12']
+                }]
+            };
+
+            var timelineData = {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Timeline Analysis',
+                    data: [10, 25, 15, 30],
+                    borderColor: '#3498db',
+                    fill: false
+                }]
+            };
+
+            var statusData = {
+                labels: ['Open', 'Closed', 'In Progress'],
+                datasets: [{
+                    data: [40, 30, 30],
+                    backgroundColor: ['#2ecc71', '#e74c3c', '#f39c12']
+                }]
+            };
+
+            // Initialize charts
+            var ctxCategory = document.getElementById('categoryChart').getContext('2d');
+            var ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+            var ctxStatus = document.getElementById('statusChart').getContext('2d');
+
+            var categoryChart = new Chart(ctxCategory, {
+                type: 'doughnut',
+                data: categoryData
+            });
+
+            var timelineChart = new Chart(ctxTimeline, {
+                type: 'line',
+                data: timelineData
+            });
+
+            var statusChart = new Chart(ctxStatus, {
+                type: 'pie',
+                data: statusData
+            });
+        </script>
+</body>
+
+</html>
