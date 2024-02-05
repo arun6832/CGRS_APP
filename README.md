@@ -15,3 +15,7 @@
 # Outcomes:
 1.	To solve Grievances that has been submitted through the application which has been issued by the users in the most efficient way possible.
 2.	To ensure transparency in institutions imparting technical education, with the supreme objective of preventing unfair practices and to provide a mechanism to students, parents, teachers and other non-teaching staff for the redressal of their complaints.
+
+# Project Images:
+## Home Page:
+![Screenshot 2024-02-05 184215](https://github.com/arun6832/CGRS_APP/assets/143073406/f4fe51c6-5be1-4754-9195-274a254c1971)
