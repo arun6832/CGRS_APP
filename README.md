@@ -27,7 +27,7 @@
 ![Screenshot 2024-02-05 184556](https://github.com/arun6832/CGRS_APP/assets/143073406/82b3a88e-6a0c-4271-bf4d-e1fbe3effd76)
 ![Screenshot 2024-02-05 184636](https://github.com/arun6832/CGRS_APP/assets/143073406/16aa37ce-c136-45f6-af50-5b63d082f82a)
 
-## Staff Modu;e:
+## Staff Module:
 ![Screenshot 2024-02-05 231850](https://github.com/arun6832/CGRS_APP/assets/143073406/2b1af8cc-7e78-4586-b5e5-56362b11dd94)
 
 ## HOD:
