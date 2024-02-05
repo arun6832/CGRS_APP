@@ -21,9 +21,11 @@
 ![Screenshot 2024-02-05 184215](https://github.com/arun6832/CGRS_APP/assets/143073406/f4fe51c6-5be1-4754-9195-274a254c1971)
 ![Screenshot 2024-02-05 184320](https://github.com/arun6832/CGRS_APP/assets/143073406/1fa22e0f-e9fd-4158-b19f-061ab4d0c006)
 ![Screenshot 2024-02-05 184409](https://github.com/arun6832/CGRS_APP/assets/143073406/9e2344cb-40e5-4e6d-98a7-d3718863b7f6)
-![Screenshot 2024-02-05 184436](https://github.com/arun6832/CGRS_APP/assets/143073406/cd38cbe8-22a5-4722-b307-f33dc9acbf9f)
+![Screenshot 2024-02-05 184436](https://github.com/arun6832/CGRS_APP/assets/143073406/cd38cbe8-22a5-4722-b307
 
 ## Student:
+![Screenshot 2024-02-05 233114](https://github.com/arun6832/CGRS_APP/assets/143073406/1c6b45a8-2073-4a71-8e6f-33244de1924f)
+-f33dc9acbf9f)
 ![Screenshot 2024-02-05 184556](https://github.com/arun6832/CGRS_APP/assets/143073406/82b3a88e-6a0c-4271-bf4d-e1fbe3effd76)
 ![Screenshot 2024-02-05 184636](https://github.com/arun6832/CGRS_APP/assets/143073406/16aa37ce-c136-45f6-af50-5b63d082f82a)
 
