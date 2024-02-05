@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>Admin Login</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/881/681/desktop-wallpaper-7-navy-blue-backgrounds-solid-dark-blue-thumbnail.jpg');
+        }
+
+        header {
+            background-image: url('https://lavasa.christuniversity.in/images/histry-bnner.jpg');
+            background-size: cover;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .background-image {
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/881/681/desktop-wallpaper-7-navy-blue-backgrounds-solid-dark-blue-thumbnail.jpg');
+            /* Add your background image URL here */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .login-box {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 40px;
+            /* Increased padding for larger content */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            /* Increased box shadow for better contrast */
+            max-width: 600px;
+            /* Increased max-width for larger content */
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .login-box:hover {
+            transform: scale(1.02);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            /* Adjusted width for larger content and decreased margin for better alignment */
+            padding: 15px;
+            /* Increased padding for larger input fields */
+            margin: 10px auto;
+            /* Centered input fields */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            /* Increased border radius for better appearance */
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            /* Increased padding for larger button */
+            cursor: pointer;
+            border-radius: 8px;
+            /* Increased border radius for better appearance */
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .logo {
+            width: 300px;
+            /* Adjusted width for larger logo */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin-bottom: 20px;
+            /* Increased margin bottom for better spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Student Grievance System - Admin Login</h1>
+    </header>
+
+
+    <div class="login-container">
+        <div class="login-box">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo" style="height: 50px;width: max-content;">
+            <h2><b>Admin Login</b></h2>
+            <form class="mx-1 mx-md-4" method="POST">
+                {% csrf_token %}
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="Username" class="form-control" name="register"  placeholder="Username" />
+                        <label class="form-label" for="Username"></label>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="Password" class="form-control" name="password" placeholder="Password"/>
+                        <label class="form-label" for="Password"></label>
+                    </div>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label class="form-check-label" for="form2Example3">
+                        Remember me
+                    </label>
+                </div>
+
+                {% if msg %}
+                <div class="alert alert-danger" role="alert">
+                    {{ msg }}
+                </div>
+                {% endif %}
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -19,3 +19,10 @@ class complaint(models.Model):
 
         # def __str__(self):
         #         return f"{self.}"
+
+class StaffReg(models.Model):
+        reg_no=models.CharField(User,max_length=200)
+        email=models.CharField(max_length=100)
+        name=models.CharField(max_length=200)
+        password=models.CharField(max_length=100,null=False)
+        c_password=models.CharField(max_length=100,null=True)
