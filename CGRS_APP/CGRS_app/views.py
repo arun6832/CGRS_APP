@@ -8,6 +8,7 @@ def index(request):
 
 from django.contrib import messages
 
+
 #New Student Register
 def newReg(request):
     if request.method == 'POST':

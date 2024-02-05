@@ -43,7 +43,7 @@ urlpatterns = [
     path('staff',staff_dash,name='staff_dashboard'),
     path('Staffreg',StaffReg,name='StaffReg'),
     path('NEWLOGIN',NEWLOGIN,name='NEWLOGIN'),
-    path('HODreg',HODReg,name='HODreg')
+    path('HODreg',HODReg,name='HODreg'),
 ]
 
 
