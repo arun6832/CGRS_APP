@@ -220,4 +220,5 @@ def student_checkst(request):
 def student_logout(request):
     return render(request,'mlogin.html')
 
-
+def staff(request):
+    return render(request,'staff.html')

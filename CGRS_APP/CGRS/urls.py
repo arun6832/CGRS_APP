@@ -40,6 +40,7 @@ urlpatterns = [
     path('mlogin',student_logout,name='student_log_out'),
     path('testdashboard',admin_dash,name='admin_dashboard'),
     path('teststudents',admin_students,name='admin_student_list')
+    path('staff',staff,name='staff'),
 
 ]
 

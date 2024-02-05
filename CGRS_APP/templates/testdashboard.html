@@ -176,6 +176,65 @@
         bottom: 0;
         width: 100%;
     }
+    .side-bar {
+        transition: transform 0.3s ease;
+    }
+
+    .side-bar:hover {
+        transform: translateX(10px); /* Move the sidebar slightly to the right on hover */
+    }
+
+    /* Hover effect on nav items */
+    .nav-list li:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background on hover */
+    }
+
+    /* Button hover effect */
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .button:hover {
+        background-color: #45a049; /* Darker shade of green on hover */
+        transform: translateY(-2px); /* Move the button up slightly on hover */
+    }
+
+    /* Table row hover effect */
+    tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background on hover */
+    }
+
+    /* Form input focus effect */
+    input:focus,
+    select:focus {
+        border-color: #4CAF50; /* Change border color on focus */
+        box-shadow: 0 0 5px #4CAF50; /* Add a subtle shadow on focus */
+    }
+
+    /* Footer animation */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    footer:hover {
+        transform: translateY(-5px); /* Move the footer up slightly on hover */
+    }
 </style>
 
 <body>
@@ -196,7 +255,6 @@
                     <li><a href="{% url 'admin_dashboard' %}"><img class="simple-icon" src="grievance-removebg-preview.png" alt="grievance icon">Grievances</a></li>
                     <li><a href="{% url 'admin_student_list' %}"><img class="simple-icon" src="user-removebg-preview.png" alt="user icon">Students</a></li>
                     <li><a href="testreports.html"><img class="simple-icon" src="reports-removebg-preview (1).png" alt="report icon">Reports</a></li>
-                    <li><a href="support.html"><img class="simple-icon" src="support-removebg-preview.png" alt="support icon">Support</a></li>
                 </ul>
             </div>
         </div>
@@ -285,6 +343,9 @@
                 <label for="grievanceType">Grievance Type:</label>
                 <select id="grievanceType" name="grievanceType">
                     <option value="academic">Academic</option>
+                    <option value="financial">Financial</option>
+                    <option value="financial">Management</option>
+                    <option value="financial"></option>
                     <option value="financial">Financial</option>
                     <!-- Add more options as needed -->
                 </select>
