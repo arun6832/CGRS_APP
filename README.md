@@ -3,8 +3,8 @@
 # Introduction
 1. The Website is developed for Grievance Redressal System in an informal manner for Christ (Deemed to be University).
 2. The function of the website cell is to look into the complaints raised by any student or staff, and judge its merit. 
-3.	Anyone with a genuine grievance can register and submit their complaint which will be approached by the department/HOD members in person, or in consultation with the officer in-charge Students Grievance Cell. 
-4.	Students, Staffcan register their grievances online.
+3. Anyone with a genuine grievance can register and submit their complaint which will be approached by the department/HOD members in person, or in consultation with the officer in-charge Students Grievance Cell. 
+4. Students, Staff can register their grievances online.
 
 # Objectives:
 1.	To make complaints easier to coordinate, monitor, track and resolve the Grievances. 
